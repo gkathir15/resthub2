@@ -10,11 +10,21 @@ var contactSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    gender: String,
-    phone: String,
+    header: {
+        type: String,
+        required: true
+    },
+    tag: {
+        type: [],
+        required: false
+    },
     create_date: {
         type: Date,
-        default: Date.now
+        default: Date
+    },
+    source:{
+        type:String,
+        required:true
     }
 });
 // Export Contact model

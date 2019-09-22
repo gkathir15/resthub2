@@ -21,9 +21,10 @@ exports.index = function (req, res) {
 exports.new = function (req, res) {
     var contact = new Contact();
     contact.name = req.body.name ? req.body.name : contact.name;
-    contact.gender = req.body.gender;
+    contact.header = req.body.header;
     contact.email = req.body.email;
-    contact.phone = req.body.phone;
+    contact.tag = req.body.tag;
+    contact.source = req.body.source
 // save the contact and check for errors
     contact.save(function (err) {
         // Check for validation error
@@ -53,9 +54,10 @@ exports.update = function (req, res) {
         if (err)
             res.send(err);
         contact.name = req.body.name ? req.body.name : contact.name;
-        contact.gender = req.body.gender;
+        contact.header = req.body.header;
         contact.email = req.body.email;
-        contact.phone = req.body.phone;
+        contact.tag = req.body.tag;
+        contact.source = req.body.source
 // save the contact and check for errors
         contact.save(function (err) {
             if (err)

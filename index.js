@@ -14,8 +14,10 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
+var localDb = "mongodb://localhost/resthub"
+var mongoCluster = "mongodb+srv://Guru:gJbEh9QvEutc8VFd@cluster0-imyl2.mongodb.net/resthub?retryWrites=true&w=majority"
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect(mongoCluster, { useNewUrlParser: true});
 
 // Heroku Mongoose connection
 // mongoose.connect('mongodb://heroku_5686p02g:sia8l3fni4jmu7qbn0ac1t75mf@ds349857.mlab.com:49857/heroku_5686p02g', { useNewUrlParser: true });
